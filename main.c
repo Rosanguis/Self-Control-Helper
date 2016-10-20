@@ -100,7 +100,7 @@ int cycle(int *i,int timeOnline)
 
     while(*i==0)
     {
-        start=finish=clock();
+        start=finish=0;
         *i=on(i,timeOnline,start,finish);
         system("cls");
     }
@@ -121,7 +121,7 @@ int on(int *i,int timeOnline,clock_t start,clock_t finish)
     {
         finish=clock();
         duration=((double)(finish-start)/CLOCKS_PER_SEC)/60;
-        if(duration>=timeOnline)
+        if(duration>timeOnline)
         {
             break;
         }
