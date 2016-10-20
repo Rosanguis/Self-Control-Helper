@@ -16,10 +16,10 @@ int main()
 
     do
     {
-        printf("You'd like to£º\n");
+        printf("You'd like toÂ£Âº\n");
         printf("(1)Shut down at 22:00;\n");
-        printf("2¡¢Internet time control;\n");
-        printf("3¡¢Exit;\n");
+        printf("2Â¡Â¢Internet time control;\n");
+        printf("3Â¡Â¢Exit;\n");
 
         scanf(" %d",&choice);
 
@@ -127,22 +127,16 @@ int on(int *i,int timeOnline)
 
     }
 
-    if(duration>=timeOnline)
-        {
-            result=MessageBox(0,"Time's up. Please take a break.","Notice",MB_OK);/*There's an error I can't figure out
-            in this function. It seems that the int finish can't get a new value from clock() after the first loop and
-            consequently this function fails to continue counting the time online. The message box keeps popping up madly.
-            If anyone knows how to fix it, please pull your request. I'm a green hand on programming so please don't be too
-            hard on me. ^_^*/
-            if(result==0)
-            {
-                printf("Error 03\n");
-            }
-            else
-            {
-               system("rundll32.exe user32.dll LockWorkStation");
-            }
-        }
+   result=MessageBox(0,"Time's up. Please take a break.","Notice",MB_OK);
+    if(result==0)
+    {
+       printf("Error 03\n");
+    }
+    else
+    {
+       system("rundll32.exe user32.dll LockWorkStation");
+    }
+       
     return *i;
 }
 
