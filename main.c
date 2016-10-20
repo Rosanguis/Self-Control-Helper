@@ -91,6 +91,7 @@ void timeLimit(int timeOnline)
 
 int cycle(int *i,int timeOnline)
 {
+    clock_t start,finish;
     do
     {
         *i=system("ping 202.108.22.5");
@@ -99,17 +100,17 @@ int cycle(int *i,int timeOnline)
 
     while(*i==0)
     {
-        *i=on(i,timeOnline);
+        start=finish=clock();
+        *i=on(i,timeOnline,start,finish);
         system("cls");
     }
 
     return *i;
 }
 
-int on(int *i,int timeOnline)
+int on(int *i,int timeOnline,clock_t start,clock_t finish)
 {
-    int result;
-    clock_t start,finish;
+    int result;    
     double duration;
 
 
