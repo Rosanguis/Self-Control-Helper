@@ -16,10 +16,10 @@ int main()
 
     do
     {
-        printf("You'd like to£º\n");
+        printf("You'd like to: \n");
         printf("(1)Shut down at 22:00;\n");
-        printf("2¡¢Internet time control;\n");
-        printf("3¡¢Exit;\n");
+        printf("(2)Online time control;\n");
+        printf("(3)Exit;\n");
 
         scanf(" %d",&choice);
 
